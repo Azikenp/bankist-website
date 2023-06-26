@@ -31,6 +31,40 @@ document.addEventListener('keydown', function (e) {
 });
 
 
+
+
+
+
+
+
+
+const btnScrollTo  = document.querySelector('.btn--scroll-to');
+const section1 = document.querySelector('#section--1');
+btnScrollTo.addEventListener('click', function(e){
+  const s1coords = section1.getBoundingClientRect();
+
+  //scrolling
+  // window.scrollTo(s1coords.left + window.pageXOffset , s1coords.top + window.pageYOffset)
+
+  // smooth scroling
+  // window.scrollTo({
+  //   left: s1coords.left + window.pageXOffset,
+  //   top: s1coords.top + window.pageYOffset,
+  //   behavior: 'smooth',
+  // })
+
+
+  //modern way
+  section1.scrollIntoView({behavior: 'smooth'})
+})
+
+
+
+
+
+
+
+
 ////////////////////////////////////////////////
 ////////////////////////////////////////////////////
 ////////////////////////////////////////////////
@@ -38,14 +72,6 @@ document.addEventListener('keydown', function (e) {
 //////////////////////////////////////////////////
 
 //Practise
-console.log(document.documentElement);
-console.log(document.head);
-console.log(document.body);
-
-document.querySelector('.header');
-const allSections = document.querySelectorAll('.section');
-console.log(allSections);
-
 
 
 
