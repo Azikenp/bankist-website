@@ -30,18 +30,11 @@ document.addEventListener('keydown', function (e) {
   }
 });
 
-
-
-
-
-
-
-
-
+//smooth scroll for learn more button
 const btnScrollTo  = document.querySelector('.btn--scroll-to');
 const section1 = document.querySelector('#section--1');
 btnScrollTo.addEventListener('click', function(e){
-  const s1coords = section1.getBoundingClientRect();
+  // const s1coords = section1.getBoundingClientRect();
 
   //scrolling
   // window.scrollTo(s1coords.left + window.pageXOffset , s1coords.top + window.pageYOffset)
@@ -56,6 +49,25 @@ btnScrollTo.addEventListener('click', function(e){
 
   //modern way
   section1.scrollIntoView({behavior: 'smooth'});
+})
+
+//page navigation
+// document.querySelectorAll('.nav__link').forEach(function(el){
+//   el.addEventListener('click', function(e){
+//     e.preventDefault();
+//     const id = this.getAttribute('href');
+//     document.querySelector(id).scrollIntoView({behavior: 'smooth'})
+//   })
+// })
+
+//using event delegation for the page navigation function
+document.querySelector('.nav__links').addEventListener('click', function(e){
+  e.preventDefault();
+  //matching strategy
+  if(e.target.classList.contains('nav__link')){
+    const id = e.target.getAttribute('href');
+    document.querySelector(id).scrollIntoView({behavior: 'smooth'})
+  }
 })
 
 
