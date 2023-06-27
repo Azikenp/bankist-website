@@ -55,7 +55,7 @@ btnScrollTo.addEventListener('click', function(e){
 
 
   //modern way
-  section1.scrollIntoView({behavior: 'smooth'})
+  section1.scrollIntoView({behavior: 'smooth'});
 })
 
 
