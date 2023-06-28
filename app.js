@@ -195,8 +195,6 @@ const imgTargets = document.querySelectorAll('img[data-src]');
 const loading = function(entries, observer){
   const [entry] = entries;
 
-  console.log(entry);
-
   if (!entry.isIntersecting){
     return
   }
@@ -214,6 +212,15 @@ const imageObserver = new IntersectionObserver(loading, {root: null, threshold: 
 imgTargets.forEach(function(img){
   imageObserver.observe(img)
 });
+
+
+
+//Image slider
+const slides = document.querySelectorAll('.slide');
+const btnLeft = document.querySelector('.slider__btn--left');
+const btnRight = document.querySelector('.slider__btn--right');
+
+console.log(btnLeft, btnRight);
 
 
 
